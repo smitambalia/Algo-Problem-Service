@@ -25,3 +25,6 @@
     - router starts with /api
     -> /api      -> v1      -> problems         /ping or /              -> business logic 
     -> apiRouter -> v1Router -> problemRouter  -> problemController -> service layer
+
+
+    
