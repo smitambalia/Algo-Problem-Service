@@ -1,15 +1,13 @@
 const express = require("express");
 const problemRouter = express.Router();
 
-const { ProblemController } = require("../../controllers");
-problemRouter.get("/ping",ProblemController.pingProblemController)
-problemRouter.get('/:id',ProblemController.getProblems);
-problemRouter.get('/',ProblemController.getProblems);
-problemRouter.post('/',ProblemController.addProblem);
-problemRouter.put("/:id",ProblemController.updateProblem);
-problemRouter.delete(":id",ProblemController.deleteProblem)
-
-console.log(" IN the V1")
+const { problemController } = require("../../controllers");
+problemRouter.get("/ping",problemController.pingProblemController)
+problemRouter.get('/:id',problemController.getProblems);
+problemRouter.get('/',problemController.getProblems);
+problemRouter.post('/',problemController.addProblem);
+problemRouter.put("/:id",problemController.updateProblem);
+problemRouter.delete(":id",problemController.deleteProblem)
 
 
 module.exports = problemRouter;
