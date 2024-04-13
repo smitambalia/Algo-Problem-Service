@@ -23,22 +23,22 @@ async function addProblem(req, res, next) {
   }
 }
 
-let getProblem = (req, res) => {
-  try {
-    // nothing implemented
-    throw new NotImplementedError("addProblem");
-  } catch (error) {
-    next(error);
-  }
+let getProblem = async (req, res,next) => {
+  
 };
 
-function getProblems(req, res) {
-  try {
-    // nothing implemented
-    throw new NotImplementedError("addProblem");
-  } catch (error) {
-    next(error);
-  }
+async function getProblems(req, res) {
+    try {
+        const getAllProblems = await problemService.getAllProblems();
+        return res.status(StatusCodes.OK).json({
+          success: true,
+          error: {},
+          message: "Successfully fetched all the problems",
+          data: getAllProblems,
+        });
+      } catch (error) {
+        next(error);
+      }
 }
 
 function updateProblem(req, req) {
