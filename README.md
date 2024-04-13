@@ -2,8 +2,6 @@
 
 ## Project Folder Structure
 
- Folder Structure 
-
 - controllers
 - services
 - routes
@@ -11,9 +9,9 @@
 - config
 - utils
 - validators
+- errors
 
 --------------------
-
 
 
 ### Best Practices with folder structure
