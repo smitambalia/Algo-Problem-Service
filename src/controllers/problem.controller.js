@@ -13,27 +13,39 @@ function addProblem(req, res, next) {
 }
 
 let getProblem = (req, res) => {
-  return res.status(StatusCodes.NOT_IMPLEMENTED).json({
-    message: "Not Implemented",
-  });
+  try {
+    // nothing implemented
+    throw new NotImplementedError("addProblem");
+  } catch (error) {
+    next(error);
+  }
 };
 
 function getProblems(req, res) {
-  return res.status(StatusCodes.NOT_IMPLEMENTED).json({
-    message: "Not Implemented",
-  });
+  try {
+    // nothing implemented
+    throw new NotImplementedError("addProblem");
+  } catch (error) {
+    next(error);
+  }
 }
 
 function updateProblem(req, req) {
-  return res.status(StatusCodes.NOT_IMPLEMENTED).json({
-    message: "Not Implemented",
-  });
+  try {
+    // nothing implemented
+    throw new NotImplementedError("addProblem");
+  } catch (error) {
+    next(error);
+  }
 }
 
 function deleteProblem(req, res) {
-  return res.status(StatusCodes.NOT_IMPLEMENTED).json({
-    message: "Not Implemented",
-  });
+  try {
+    // nothing implemented
+    throw new NotImplementedError("addProblem");
+  } catch (error) {
+    next(error);
+  }
 }
 
 module.exports = {
