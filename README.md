@@ -26,3 +26,10 @@
 
 
     
+## Reason to seperate the repository later seperate
+
+For Example : 
+    - our problem is stroring the data in to MongoDB , repository is being created for the same database , and 
+        and the service is injecting a repository.
+    - In the service , repository object can be created , therefore my service can create any repository ( which    eventually uses any databases )
+    - support to any database in the future can be integraded with ease.
