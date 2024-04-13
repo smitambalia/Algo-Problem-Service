@@ -1,3 +1,4 @@
+const { deleteProblem } = require("../controllers/problem.controller");
 const { Problem } = require("../models");
 
 class ProblemRepository {
@@ -28,13 +29,20 @@ class ProblemRepository {
 
   async getProblemByID(id) {
     try {
-      console.log("In the repo :", id);
       const getProblem = await Problem.findById(id);
-      console.log(getProblem)
       return getProblem;
     } catch (error) {
       console.log(error);
       throw error;
+    }
+  }
+  async deleteProblemById(problemId) {
+    try {
+        const deletedProblem = await Problem.findByIdAndDelete(problemId);
+        return deletedProblem;
+    } catch (error) {
+        console.log(error)
+        throw(error)
     }
   }
 }

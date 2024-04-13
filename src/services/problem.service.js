@@ -1,3 +1,4 @@
+const { deleteProblem } = require("../controllers/problem.controller");
 const NotFountError = require("../errors/notfound.error");
 const sanitizeMarkdownContent = require("../utils/markdownSanitizer");
 
@@ -25,6 +26,15 @@ class ProblemService {
       throw new NotFountError("Problem", id);
     }
     return problem;
+  }
+  async deleteProblemById(problemId) {
+    const deletedProblem = await this.problemRepository.deleteProblemById(
+      problemId
+    );
+    if (!deletedProblem) {
+      throw new NotFountError("Problem", problemId);
+    }
+    return deletedProblem;
   }
 }
 

@@ -69,10 +69,21 @@ function updateProblem(req, req, next) {
   }
 }
 
-function deleteProblem(req, res, next) {
+async function deleteProblem(req, res, next) {
   try {
-    // nothing implemented
-    throw new NotImplementedError("addProblem");
+    if (req.params.id.match(/^[0-9a-fA-F]{24}$/)) {
+      const deletedProblem = await problemService.deleteProblemById(
+        req.params.id
+      );
+      return res.status(StatusCodes.ACCEPTED).json({
+        success: true,
+        error: {},
+        data: deletedProblem,
+        message: "Successfully deleted a problem",
+      });
+    }
+
+    throw new BadRequest("id");
   } catch (error) {
     next(error);
   }
